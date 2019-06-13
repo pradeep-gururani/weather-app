@@ -111,3 +111,15 @@ h1{
   border-radius: 10px;
   border: 2px solid #000;
 }
+.loaderDiv{
+  margin-top: 20px;
+}
+.loaderDiv img{ 
+  max-width: 70px;
+}
+.stats {
+  padding: 0 50px;
+}
+.stats span {
+  padding: 5px 11px;
+}

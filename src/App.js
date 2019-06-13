@@ -14,8 +14,6 @@ class App extends Component {
   }
   
   handleClicked = (data)=>{
-    console.log('222222',data);
-    
     this.setState({clickedBtn : data});
   }
   render() { 
