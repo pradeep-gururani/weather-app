@@ -1,10 +1,11 @@
 import React from 'react';
-export default function SideBar ({handleClicked}){
+export default function SideBar ({handleClicked, clickedBtn}){
+
         return ( 
             <div className="sideBar">
                 <ul>
-                    <li>
-                        <a href="#"
+                    <li className={clickedBtn && clickedBtn === "DataAnalysis"?"active":""}>
+                        <a href="#" 
                             onClick = {
                                 ()=>{
                                     handleClicked("DataAnalysis");
@@ -12,8 +13,8 @@ export default function SideBar ({handleClicked}){
                             }
                         >Data Analysis</a>
                     </li>
-                    <li>
-                        <a href="#"
+                    <li className={clickedBtn && clickedBtn === "TodaysWeather"?"active":""}>
+                        <a href="#" 
                             onClick = {
                                 ()=>{
                                     handleClicked("TodaysWeather");

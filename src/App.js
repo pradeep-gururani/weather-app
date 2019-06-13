@@ -9,13 +9,11 @@ class App extends Component {
   constructor() {
     super();
     this.state = { 
-      clickedBtn: ""
+      clickedBtn: "DataAnalysis"
      };
   }
   
   handleClicked = (data)=>{
-    console.log('222222',data);
-    
     this.setState({clickedBtn : data});
   }
   render() { 
@@ -23,7 +21,9 @@ class App extends Component {
       <div className="App">
         <div className="AppContainer">
          <div className="left-section">
-            <SideBar handleClicked = {this.handleClicked}/>
+            <SideBar handleClicked = {this.handleClicked}
+              clickedBtn={this.state.clickedBtn}
+            />
          </div>
          <div className="right-section">
             { this.state.clickedBtn ==="DataAnalysis"
