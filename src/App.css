@@ -47,6 +47,9 @@ h1{
   text-align: left;
   border: 1px solid transparent;
 }
+.sideBar ul li.active{
+  background: #E7EBFF;
+}
 .sideBar ul li:hover{
   border: 1px solid #2a9fcd;
   background: #E7EBFF;

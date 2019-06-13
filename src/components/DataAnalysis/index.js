@@ -29,8 +29,6 @@ const data = {
     ]
   };
 class DataAnalysis extends Component {
-    state = {  }
-    
     render() { 
         
 

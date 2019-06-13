@@ -1,12 +1,8 @@
 import React, { Component } from "react";
-import cloudy from "../../images/cloudy.svg";
-import rainy from '../../images/rain.svg';
-import sun from '../../images/sun.svg';
-import notFound from '../../images/not-available.png';
 import { connect } from "react-redux";
 import { getWeatherRequest } from "../../redux/actions";
 import LoaderImg from "../../images/loading.svg";
-import Haze from '../../images/Haze.png';
+import getImageUrl from '../../services/getWeatherImage';
 let WeatherImg;
 class TodaysWeather extends Component {
     constructor(props) {
@@ -28,24 +24,11 @@ class TodaysWeather extends Component {
 
     this.props.getWeatherRequest(requestVal);
   };
-  render() {
-    this.props &&
-    this.props.todaysWeather.weather
-    ?
-        this.props.todaysWeather.weather[0].main.toLowerCase() === "rain"
-        ?
-            WeatherImg=rainy
-            : this.props.todaysWeather.weather[0].main.toLowerCase() === "cloudy" || this.props.todaysWeather.weather[0].main.toLowerCase() === "clouds"
-                ?
-                WeatherImg=cloudy
-                :this.props.todaysWeather.weather[0].main.toLowerCase() === "sun" || this.props.todaysWeather.weather[0].main.toLowerCase() === "clear"
-                    ?
-                        WeatherImg = sun
-                    :this.props.todaysWeather.weather[0].main.toLowerCase() === "haze"
-                        ?
-                            WeatherImg = Haze
-                        :WeatherImg= notFound
-    : WeatherImg=notFound
+  render() {    
+    if(this.props &&
+    this.props.todaysWeather.weather) {
+        WeatherImg = getImageUrl(this.props.todaysWeather.weather[0].main.toLowerCase());
+    }    
     
     const { weatherLoading } = this.props.weatherLoading;
     return (
