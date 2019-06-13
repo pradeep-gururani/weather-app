@@ -4,7 +4,7 @@ import axios from "axios";
 export function* getWeatherRequest(action) {
     
     let error = null;
-    let url = `http://api.openweathermap.org/data/2.5/weather?q=${action.payload.city},${action.payload.country}&units=metric&appid=5d3b72d019b64f7c5e2b0ee30ebe93ca`;
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${action.payload.city},${action.payload.country}&units=metric&appid=5d3b72d019b64f7c5e2b0ee30ebe93ca`;
     const res = yield axios
         .get(url, {
         method: "POST"
